@@ -1,13 +1,13 @@
 import React from 'react';
+import { Joystick } from 'react-joystick-component';
 
 class Asparagus extends React.Component{
     render(){
         return(
-            <div className="Asparagus">
+            <div>
                 <h1>Monitoring system</h1>
                 <div>
-                    <form>
-                    </form>
+                <Joystick size={100} baseColor="red" stickColor="black" ></Joystick>
                 </div>
             </div>
         )
