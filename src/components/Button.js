@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
+import ButtonItem from './ButtonItem';
 
-export class Scene_button extends Component{
-    constructor(x, y, img, det_img){
-        this.x = x
-        this.y = y
-        this.img = img
-        this.det_img = det_img
-        this.name = x + y
-    }
+class Button extends Component{
     render(){
-    <div key='button' style={buttonstyle}>
-        {this.props.name}
-    </div>
+        return this.props.pos.map((p) => (
+        <div key={p.id}>
+            <ButtonItem pos={p}/>
+        </div>
+        )
+        );
+    
     }
 }
+
+export default Button;
