@@ -31,14 +31,18 @@ class Asparagus extends React.Component{
                 color: '#fff',
                 padding: '5px',
                 fontSize: '15px'
+            },
+            {
+                id:3,
+                color: '#fff',
+                padding: '5px',
+                fontSize: '15px'
             }
         ]
     }
 
     whenClicked = () => {
-        return {
-
-        }
+        console.log(this.state);
     }
 
 
@@ -47,9 +51,10 @@ class Asparagus extends React.Component{
             <div style={this.getStyle()}>
                 <h1>Monitoring system</h1>
                 <br></br>
-                <Link style={this.state.linkStyle[0]} onClick={this.whenClicked()} to="/">Home</Link> |  
-                <Link style={this.state.linkStyle[1]} to="/about">About</Link> ｜ 
-                <Link style={this.state.linkStyle[2]} to="/monitor">Monitor</Link>
+                <Link style={this.state.linkStyle[0]} to="/">Home</Link> |  
+                <Link style={this.state.linkStyle[1]} to="/control"> Control</Link>｜ 
+                <Link style={this.state.linkStyle[2]} to="/monitor">Monitor</Link> | 
+                <Link style={this.state.linkStyle[3]} to="/about">About</Link>
             </div>
         )
     }

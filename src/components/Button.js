@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import ButtonItem from './ButtonItem';
 
 class Button extends Component{
     render(){
-        return this.props.pos.map((p) => (
-        <div >
-            <ButtonItem />
-        </div>
+        const id = this.props.key;
+        const info = this.props.info;
+        const numbering = this.props.numbering;
+        return (
+        <button>{numbering}{info.id}</button>
         )
-        );
     
     }
 }
