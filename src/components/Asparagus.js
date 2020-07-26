@@ -12,21 +12,48 @@ class Asparagus extends React.Component{
         }
     }
 
+    state = {
+        linkStyle : [
+            {
+                id:0,
+                color: '#fff',
+                padding: '5px',
+                fontSize: '15px'
+            },
+            {   
+                id:1,
+                color: '#fff',
+                padding: '5px',
+                fontSize: '15px'
+            },
+            {
+                id:2,
+                color: '#fff',
+                padding: '5px',
+                fontSize: '15px'
+            }
+        ]
+    }
+
+    whenClicked = () => {
+        return {
+
+        }
+    }
+
+
     render(){
         return(
             <div style={this.getStyle()}>
                 <h1>Monitoring system</h1>
                 <br></br>
-                <Link style={linkStyle} to="/">Home</Link> | <Link style={linkStyle} to="/about">About</Link>
+                <Link style={this.state.linkStyle[0]} onClick={this.whenClicked()} to="/">Home</Link> |  
+                <Link style={this.state.linkStyle[1]} to="/about">About</Link> ｜ 
+                <Link style={this.state.linkStyle[2]} to="/monitor">Monitor</Link>
             </div>
         )
     }
 }
 
-const linkStyle = {
-    color: '#fff',
-    padding: '5px',
-    fontSize: '15px'
-}
 
 export default Asparagus;
