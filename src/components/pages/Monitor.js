@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Field from '../Field'
 import Sideshow from '../Sideshow'
+import Midshow from '../Midshow'
 
 export class Monitor extends Component {
     state = {
@@ -77,19 +78,24 @@ export class Monitor extends Component {
                 img_E: '../images/E8.jpg',
                 img_F: '../images/F8.jpg',
             }
-        ]
+        ],
+        col: 'A',
+        row: 1,
+        img: '../images/A1.jpg',
     }
-    displayImage = () => {
-        console.log('Hello')
+
+    rtBtn = (c, r) => {
+        this.setState({col: c, row: r, img:('../images/'+c+r.toString()+'.jpg')})
     }
 
     render() {
         return (
             <div>
                 <section style={fieldStyle}>
-                    <Field rows={this.state.rows} displayImage={this.displayImage}/>
+                    <Field rows={this.state.rows} rtBtn={this.rtBtn}/>
                 </section>
-                <aside>
+                <aside style={{float:'right',width:'70%'}}>
+                    <Midshow col={this.state.col} row={this.state.row}/>
                     <Sideshow />
                 </aside>
             </div>
@@ -98,9 +104,10 @@ export class Monitor extends Component {
 }
 
 const fieldStyle = {
-    backgroundColor: 'blue',
+    //backgroundColor: 'blue',
     float: 'left',
     padding: '20px 20px',
+    width: '30%'
 }
 
 export default Monitor

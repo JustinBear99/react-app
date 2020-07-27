@@ -3,10 +3,11 @@ import React, { Component } from 'react'
 export class Sideshow extends Component {
     getStyle = () => {
         return {
-            backgroundColor: 'yellow',
+            //backgroundColor: 'yellow',
             color: 'black',
             float: 'right',
             width: '30%',
+            fontSize: '16px',
         }
     }
 
@@ -16,7 +17,7 @@ export class Sideshow extends Component {
                 <label>Choose a property:</label>
                 <br></br>
                 <select>
-                    <option value="Number of stalks">Number of stalks</option>
+                    <option value="Number of clumps">Number of clumps</option>
                     <option value="spear 1">spear 1</option>
                     <option value="spear 2">spear 2</option>
                     

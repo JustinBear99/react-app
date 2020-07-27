@@ -6,7 +6,7 @@ export class Field extends Component {
     
     render() {
         return this.props.rows.map((row) => (
-            <Row key={row.id} row={row} displayImage={this.props.displayImage}/>
+            <Row key={row.id} row={row} rtBtn={this.props.rtBtn}/>
         ));
     }
 }

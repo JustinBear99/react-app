@@ -45,7 +45,6 @@ class Asparagus extends React.Component{
         console.log(this.state);
     }
 
-
     render(){
         return(
             <div style={this.getStyle()}>

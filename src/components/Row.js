@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 
 export class Row extends Component {
+
     buttonStyle = () => {
         return {
             backgroundColor: 'green',
@@ -19,7 +20,7 @@ export class Row extends Component {
         const row = this.props.row;
         return (
             <div>
-                <button style={this.buttonStyle()} onClick={this.props.displayImage}>A{row.id}</button>
+                <button style={this.buttonStyle()} onClick={ () => this.props.rtBtn('A', row.id) } >A{row.id}</button>
                 <button style={this.buttonStyle()}>B{row.id}</button>
                 <button style={this.buttonStyle()}>C{row.id}</button>
                 <button style={this.buttonStyle()}>D{row.id}</button>
