@@ -34,7 +34,7 @@ export class Midshow extends Component {
                 <br></br>
                 <h1>{img[0].title}</h1>
                 <br></br>
-                <DrawItems items={items}/>
+                <DrawItems items={items} detInfo={this.props.detInfo}/>
                 <img style={this.imgStyle()} src={img[0].src} alt='Unspecified'></img>
                 
             </div>

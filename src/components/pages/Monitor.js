@@ -34,12 +34,22 @@ export class Monitor extends Component {
         col: 'A',
         row: 1,
         img: '../images/A1.jpg',
+        num_stalks: 0,
+        num_spears: 0,
+        num_shoot: 0,
+        h_obj: 0,
+        w_obj: 0,
+        cate_obj: 0,
+        score: 0,
     }
 
     rtBtn = (c, r) => {
         this.setState({col: c, row: r, img:('../images/'+c+r.toString()+'.jpg')})
     }
 
+    detInfo = () => {
+        this.setState()
+    }
     render() {
         return (
             <div>
@@ -47,7 +57,7 @@ export class Monitor extends Component {
                     <Field rows={this.state.rows} rtBtn={this.rtBtn}/>
                 </section>
                 <aside style={{float:'right',width:'70%'}}>
-                    <Midshow col={this.state.col} row={this.state.row}/>
+                    <Midshow col={this.state.col} row={this.state.row} detInfo={this.detInfo}/>
                     <Sideshow col={this.state.col} row={this.state.row}/>
                 </aside>
             </div>
