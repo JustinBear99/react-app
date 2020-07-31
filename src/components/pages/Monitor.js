@@ -47,10 +47,21 @@ export class Monitor extends Component {
         this.setState({col: c, row: r, img:('../images/'+c+r.toString()+'.jpg')})
     }
 
-    detInfo = () => {
-        this.setState()
+    detInfo = (category, width, height, score, states) => {
+        this.setState(
+            {
+                cate_obj: category,
+                w_obj: width,
+                h_obj: height,
+                score: score,
+                //num_stalks: states.num_stalks,
+                //num_spears: states.num_spears,
+                //num_shoots: states.num_shoots,
+            }
+        )
     }
     render() {
+        console.log(this.state)
         return (
             <div>
                 <section style={fieldStyle}>
