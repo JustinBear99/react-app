@@ -7,10 +7,10 @@ export class Row extends Component {
     buttonStyle = () => {
         return {
             backgroundColor: 'green',
-            margin: '0px 10px',
-            padding: '10px',
+            margin: '0px 2%',
+            padding: '2%',
             height: '90px',
-            width: '60px',
+            width: '10%',
             fontSize: '30px',
         }
     }

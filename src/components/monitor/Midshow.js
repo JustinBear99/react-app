@@ -1,10 +1,26 @@
-import React, { Component } from 'react'
+import React, { Component, PureComponent } from 'react'
+import {isMobile} from 'react-device-detect'
 import {v4 as uuid} from 'uuid'
 import images from './Images'
 import DrawItems from './DrawItems'
 import det from '../../detection/coco_instances_results_converted.json'
 
 export class Midshow extends Component {
+    state = {
+        resolution: [
+            {
+                id: uuid,
+                type: 'pc',
+                width: 800,
+                height: 600
+            },
+            {
+                id: uuid,
+                type
+            }
+        ]
+    }
+
     getStyle = () => {
         return {
             //backgroundColor: 'red',

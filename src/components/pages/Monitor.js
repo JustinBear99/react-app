@@ -77,7 +77,7 @@ export class Monitor extends Component {
 }
 
 const fieldStyle = {
-    //backgroundColor: 'blue',
+    backgroundColor: 'blue',
     float: 'left',
     padding: '20px 20px',
     width: '30%'
