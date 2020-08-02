@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Field from '../Field'
-import Sideshow from '../Sideshow'
-import Midshow from '../Midshow'
+import Field from '../monitor/Field'
+import Sideshow from '../monitor/Sideshow'
+import Midshow from '../monitor/Midshow'
 
 export class Monitor extends Component {
     state = {
@@ -62,7 +62,6 @@ export class Monitor extends Component {
     }
 
     render() {
-        console.log(this.state)
         return (
             <div>
                 <section style={fieldStyle}>

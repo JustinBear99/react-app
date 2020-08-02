@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { Joystick } from 'react-joystick-component'
-import Webcam from 'react-webcam'
+import Frontview from '../control/Frontview'
 
 export class Control extends Component {
     render() {
         return (
             <div>
-                <Webcam />
+                <Frontview />
                 <Joystick size={100} baseColor="red" stickColor="blue" />
                 
             </div>
