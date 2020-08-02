@@ -47,19 +47,20 @@ export class Monitor extends Component {
         this.setState({col: c, row: r, img:('../images/'+c+r.toString()+'.jpg')})
     }
 
-    detInfo = (category, width, height, score, states) => {
+    detInfo = (category, width, height, score, num_stalks, num_spears, num_shoots) => {
         this.setState(
             {
                 cate_obj: category,
                 w_obj: width,
                 h_obj: height,
                 score: score,
-                //num_stalks: states.num_stalks,
-                //num_spears: states.num_spears,
-                //num_shoots: states.num_shoots,
+                num_stalks: num_stalks,
+                num_spears: num_spears,
+                num_shoots: num_shoots,
             }
         )
     }
+
     render() {
         console.log(this.state)
         return (
@@ -69,7 +70,7 @@ export class Monitor extends Component {
                 </section>
                 <aside style={{float:'right',width:'70%'}}>
                     <Midshow col={this.state.col} row={this.state.row} detInfo={this.detInfo}/>
-                    <Sideshow col={this.state.col} row={this.state.row}/>
+                    <Sideshow col={this.state.col} row={this.state.row} Info={this.state}/>
                 </aside>
             </div>
         )
