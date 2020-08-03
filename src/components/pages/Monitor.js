@@ -61,23 +61,54 @@ export class Monitor extends Component {
         )
     }
 
-    render() {
+    portrait = () => {
+       return (
+           <div>
+               <div>
+                    <section style={{float: 'left', width: '50%'}}>
+                        <Field rows={this.state.rows} rtBtn={this.rtBtn}/>
+                    </section>
+                    <aside style={{float: 'right', width: '50%'}}>
+                        <Sideshow col={this.state.col} row={this.state.row} Info={this.state}/>
+                    </aside> 
+                </div>
+                <div>
+                    <Midshow col={this.state.col} row={this.state.row} detInfo={this.detInfo}/>
+                </div>
+           </div>
+       )
+    }
+
+    landscape = () => {
         return (
             <div>
-                <section style={fieldStyle}>
+                <div style={fieldStyle}>
                     <Field rows={this.state.rows} rtBtn={this.rtBtn}/>
-                </section>
-                <aside style={{float:'right',width:'70%'}}>
+                </div>
+                <div style={{float:'right',width:'70%'}}>
                     <Midshow col={this.state.col} row={this.state.row} detInfo={this.detInfo}/>
                     <Sideshow col={this.state.col} row={this.state.row} Info={this.state}/>
-                </aside>
+                </div>
             </div>
         )
+    }
+
+    componentWillMount = () => {
+        if (window.innerWidth < window.innerHeight){
+            return this.portrait()
+        }
+        else {
+            return this.landscape()
+        }
+    }
+
+    render() {
+        return this.landscape()
     }
 }
 
 const fieldStyle = {
-    backgroundColor: 'blue',
+    //backgroundColor: 'blue',
     float: 'left',
     padding: '20px 20px',
     width: '30%'

@@ -7,18 +7,8 @@ import det from '../../detection/coco_instances_results_converted.json'
 
 export class Midshow extends Component {
     state = {
-        resolution: [
-            {
-                id: uuid,
-                type: 'pc',
-                width: 800,
-                height: 600
-            },
-            {
-                id: uuid,
-                type
-            }
-        ]
+        width: 800,
+        height: 600,
     }
 
     getStyle = () => {
@@ -32,7 +22,6 @@ export class Midshow extends Component {
 
     imgStyle = () => {
         return {
-            
             width: '800px',
             height: '600px',
         }

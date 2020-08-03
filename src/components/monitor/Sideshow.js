@@ -7,8 +7,8 @@ export class Sideshow extends Component {
             //backgroundColor: 'yellow',
             padding: '20px',
             color: 'black',
-            float: 'right',
-            width: '30%',
+            float: 'center',
+            //width: '30%',
             fontSize: '16px',
         }
     }
@@ -23,7 +23,7 @@ export class Sideshow extends Component {
     itemStyle = () => {
         return {
             margin: '0px 40px',
-            float: 'left',
+            //float: 'left',
         }
     }
 
