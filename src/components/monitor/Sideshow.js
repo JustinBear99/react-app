@@ -2,16 +2,6 @@ import React, { Component } from 'react'
 //import images from './Images'
 
 export class Sideshow extends Component {
-    divStyle = () => {
-        return {
-            backgroundColor: 'yellow',
-            padding: '20px',
-            color: 'black',
-            float: 'right',
-            width: '30%',
-            fontSize: '16px',
-        }
-    }
 
     listStyle = () => {
         return {
@@ -30,7 +20,7 @@ export class Sideshow extends Component {
     render() {
         const Info = this.props.Info
         return (
-            <div style={this.divStyle()}>
+            <div>
                 <h2>States of current image</h2>
                 <br></br>
                 <ul style={this.listStyle()}>
@@ -38,6 +28,8 @@ export class Sideshow extends Component {
                     <li style={this.itemStyle()}>Number of spears: {Info.num_spears}</li>
                     <li style={this.itemStyle()}>Number of shoots: {Info.num_shoots}</li>
                 </ul>
+                <br></br>
+                <h2>State of picked one</h2>
                 <br></br>
                 <ul style={this.listStyle()}>
                     <li style={this.itemStyle()}>This is a: {Info.cate_obj}</li>

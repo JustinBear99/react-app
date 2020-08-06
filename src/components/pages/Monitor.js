@@ -6,13 +6,13 @@ import Midshow from '../monitor/Midshow'
 export class Monitor extends Component {
 
     state = {
-        rows: [{id: 1}, {id: 2}, {id: 3}, {id: 4}, {id: 5}, {id: 6}, {id: 7}, {id: 8}],
+        rows: [{id: 0}, {id: 1}, {id: 2}, {id: 3}, {id: 4}, {id: 5}, {id: 6}, {id: 7}, {id: 8}],
         cols: [{id: 'A'}, {id: 'B'}, {id: 'C'}, {id: 'D'}, {id: 'E'}, {id: 'F'}],
         currentRow: 1,
         currentCol: 'A',
         num_stalks: 0,
         num_spears: 0,
-        num_shoot: 0,
+        num_shoots: 0,
         h_obj: 0,
         w_obj: 0,
         cate_obj: 0,
@@ -46,10 +46,10 @@ export class Monitor extends Component {
                    <Midshow col={this.state.currentCol} row={this.state.currentRow} detInfo={this.detInfo}/>
                </div>
                <div>
-                    <section style={{float: 'left', width: '50%'}}>
+                    <section style={fieldStylePortrait}>
                         <Field cols={this.state.cols} rows={this.state.rows} rtBtn={this.rtBtn}/>
                     </section>
-                    <aside style={{float: 'right', width: '50%'}}>
+                    <aside style={sideshowStylePortrait}>
                         <Sideshow col={this.state.currentCol} row={this.state.currentRow} Info={this.state}/>
                     </aside> 
                 </div>
@@ -60,17 +60,17 @@ export class Monitor extends Component {
     landscape() {
         return (
             <div>
-                <div style={fieldStyle}>
+                <section style={fieldStyleLandscape}>
                     <Field cols={this.state.cols} rows={this.state.rows} rtBtn={this.rtBtn}/>
-                </div>
-                <div style={{float:'right',width:'70%'}}>
+                </section>
+                <aside style={{float: 'right', width: '70%'}}>
                     <section style={midshowStyleLandscape}>
                         <Midshow col={this.state.currentCol} row={this.state.currentRow} detInfo={this.detInfo}/>
                     </section>
-                    <aside>
+                    <aside style={sideshowStyleLandscape}>
                         <Sideshow col={this.state.currentCol} row={this.state.currentRow} Info={this.state}/>
                     </aside>
-                </div>
+                </aside>
             </div>
         )
     }
@@ -93,7 +93,14 @@ export class Monitor extends Component {
     }
 }
 
-const fieldStyle = {
+const fieldStylePortrait = {
+    backgroundColor: 'blue',
+    float: 'left',
+    padding: '20px 20px',
+    width: '50%'
+}
+
+const fieldStyleLandscape = {
     backgroundColor: 'blue',
     float: 'left',
     padding: '20px 20px',
@@ -110,9 +117,28 @@ const midshowStylePortrait = {
 const midshowStyleLandscape = {
     backgroundColor: 'red',
     color: 'black',
-    alignItems: 'center',
-    justifyContent: 'center',
+    //alignItems: 'center',
+    //justifyContent: 'center',
     float: 'left',
     width: '70%'
+}
+
+const sideshowStylePortrait = {
+    backgroundColor: 'yellow',
+    padding: '20px',
+    color: 'black',
+    float: 'right',
+    width: '50%',
+    fontSize: '16px',
+    txtAlign: 'center',
+}
+
+const sideshowStyleLandscape = {
+    backgroundColor: 'yellow',
+    padding: '20px',
+    color: 'black',
+    float: 'right',
+    width: '30%',
+    fontSize: '16px',
 }
 export default Monitor

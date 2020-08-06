@@ -3,7 +3,7 @@ import {v4 as uuid} from 'uuid'
 import Row from './Row'
 
 export class Field extends Component {
-    
+
     render() {
         return this.props.rows.map((row) => (
             <div key={uuid()}>
