@@ -1,38 +1,16 @@
 import React, { Component } from 'react'
-//import Button from './Button'
-import PropTypes from 'prop-types';
+import {v4 as uuid} from 'uuid'
+import Section from './Section';
 
 export class Row extends Component {
 
-    buttonStyle = () => {
-        return {
-            backgroundColor: 'green',
-            margin: '0px 2%',
-            padding: '2%',
-            height: '90px',
-            width: '10%',
-            fontSize: '30px',
-        }
-    }
-
 
     render() {
-        const row = this.props.row;
-        return (
-            <div>
-                <button style={this.buttonStyle()} onClick={ () => this.props.rtBtn('A', row.id) } >A{row.id}</button>
-                <button style={this.buttonStyle()}>B{row.id}</button>
-                <button style={this.buttonStyle()}>C{row.id}</button>
-                <button style={this.buttonStyle()}>D{row.id}</button>
-                <button style={this.buttonStyle()}>E{row.id}</button>
-                <button style={this.buttonStyle()}>F{row.id}</button>
-            </div>
-        )
+        return this.props.cols.map(col => (
+            <Section key={uuid()} col={col} rowId={this.props.row.id} rtBtn={this.props.rtBtn} />
+        ))
     }
 }
 
-Row.propTypes = {
-    row: PropTypes.object.isRequired
-}
 
 export default Row

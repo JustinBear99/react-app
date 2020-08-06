@@ -1,19 +1,16 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types';
+import {v4 as uuid} from 'uuid'
 import Row from './Row'
 
 export class Field extends Component {
     
     render() {
         return this.props.rows.map((row) => (
-            <Row key={row.id} row={row} rtBtn={this.props.rtBtn}/>
+            <div key={uuid()}>
+                <Row cols={this.props.cols} row={row} rtBtn={this.props.rtBtn}/>
+            </div>
         ));
     }
-}
-
-
-Field.propTypes = {
-    rows: PropTypes.array.isRequired
 }
 
 export default Field

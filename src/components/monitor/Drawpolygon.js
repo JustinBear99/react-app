@@ -40,8 +40,8 @@ export class Drawpolygon extends Component {
     clickEvent = (item) => {
         const category_id = {1:'stalk', 2:'spear', 3:'shoot', 4:'bar'}
         const category = category_id[item.category_id]
-        const width = (item.bbox[2]*800)/item.segmentation.size[1]
-        const height = (item.bbox[3]*600)/item.segmentation.size[0]
+        const width = (item.bbox[2]*this.props.width)/item.segmentation.size[1]
+        const height = (item.bbox[3]*this.props.height)/item.segmentation.size[0]
         const score = item.score
         const num_stalks = this.state.num_stalks
         const num_spears = this.state.num_spears
@@ -64,7 +64,7 @@ export class Drawpolygon extends Component {
 
     render() {
         return (
-            <polygon points={this.rescale(this.props.item.segmentation.counts, this.props.item.segmentation.size, [600,800])} 
+            <polygon points={this.rescale(this.props.item.segmentation.counts, this.props.item.segmentation.size, [this.props.height, this.props.width])} 
                 fill={this.fill(this.props.item)} 
                 fillOpacity={0.5} 
                 cursor={'pointer'}

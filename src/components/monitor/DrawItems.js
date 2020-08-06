@@ -8,7 +8,7 @@ export class DrawItems extends Component {
     render() {
         var items = this.props.items
         return items.map((item) => (
-            <Drawpolygon key={uuid()} item={item} items={items} detInfo={this.props.detInfo}/>
+            <Drawpolygon key={uuid()} item={item} items={items} detInfo={this.props.detInfo} height={this.props.height} width={this.props.width}/>
         ));
     }
 }

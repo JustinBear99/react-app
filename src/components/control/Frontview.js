@@ -6,7 +6,7 @@ export class Frontview extends Component {
         return (
             <div>
                 <h1>Front view</h1>
-                <Webcam autoFocus={true}
+                <Webcam height={'800px'}
                         
                 />
             </div>

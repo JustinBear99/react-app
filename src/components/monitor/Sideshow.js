@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 //import images from './Images'
 
 export class Sideshow extends Component {
-    getStyle = () => {
+    divStyle = () => {
         return {
-            //backgroundColor: 'yellow',
+            backgroundColor: 'yellow',
             padding: '20px',
             color: 'black',
-            float: 'center',
-            //width: '30%',
+            float: 'right',
+            width: '30%',
             fontSize: '16px',
         }
     }
@@ -30,7 +30,7 @@ export class Sideshow extends Component {
     render() {
         const Info = this.props.Info
         return (
-            <div style={this.getStyle()}>
+            <div style={this.divStyle()}>
                 <h2>States of current image</h2>
                 <br></br>
                 <ul style={this.listStyle()}>
