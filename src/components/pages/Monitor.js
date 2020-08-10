@@ -61,7 +61,7 @@ export class Monitor extends Component {
         return (
             <div>
                 <section style={fieldStyleLandscape}>
-                    <Field cols={this.state.cols} rows={this.state.rows} rtBtn={this.rtBtn}/>
+                    <Field cols={this.state.cols} rows={this.state.rows} rtBtn={this.rtBtn} btnBgColor={this.state.btnBgColor}/>
                 </section>
                 <aside style={{float: 'right', width: '70%'}}>
                     <section style={midshowStyleLandscape}>
@@ -94,28 +94,28 @@ export class Monitor extends Component {
 }
 
 const fieldStylePortrait = {
-    backgroundColor: 'blue',
+    //backgroundColor: 'blue',
     float: 'left',
     padding: '20px 20px',
     width: '50%'
 }
 
 const fieldStyleLandscape = {
-    backgroundColor: 'blue',
+    //backgroundColor: 'blue',
     float: 'left',
     padding: '20px 20px',
     width: '30%'
 }
 
 const midshowStylePortrait = {
-    backgroundColor: 'red',
+    //backgroundColor: 'red',
     color: 'black',
     alignItems: 'center',
     justifyContent: 'center',
 }
 
 const midshowStyleLandscape = {
-    backgroundColor: 'red',
+    //backgroundColor: 'red',
     color: 'black',
     //alignItems: 'center',
     //justifyContent: 'center',
@@ -124,7 +124,7 @@ const midshowStyleLandscape = {
 }
 
 const sideshowStylePortrait = {
-    backgroundColor: 'yellow',
+    //backgroundColor: 'yellow',
     padding: '20px',
     color: 'black',
     float: 'right',
@@ -134,7 +134,7 @@ const sideshowStylePortrait = {
 }
 
 const sideshowStyleLandscape = {
-    backgroundColor: 'yellow',
+    //backgroundColor: 'yellow',
     padding: '20px',
     color: 'black',
     float: 'right',

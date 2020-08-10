@@ -30,7 +30,7 @@ export class Midshow extends Component {
         return (
             <div id={'midshow'}>
                 <br></br>
-                <h1>{img[0].title}</h1>
+                <h1 style={{fontSize: '30px'}}>{img[0].title}</h1>
                 <br></br>
                 <svg height={this.state.height} width={this.state.width} key={uuid()} style={{position:'absolute'}}>
                     <DrawItems items={items} detInfo={this.props.detInfo} height={this.state.height} width={this.state.width}/>

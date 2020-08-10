@@ -6,7 +6,7 @@ export class Field extends Component {
 
     render() {
         return this.props.rows.map((row) => (
-            <div key={uuid()}>
+            <div key={uuid()} style={{verticalAlign: 'middle'}}>
                 <Row cols={this.props.cols} row={row} rtBtn={this.props.rtBtn}/>
             </div>
         ));

@@ -7,7 +7,7 @@ export class Row extends Component {
 
     render() {
         return this.props.cols.map(col => (
-            <Section key={uuid()} col={col} rowId={this.props.row.id} rtBtn={this.props.rtBtn} />
+            <Section key={uuid()} col={col} rowId={this.props.row.id} rtBtn={this.props.rtBtn}/>
         ))
     }
 }
