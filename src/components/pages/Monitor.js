@@ -21,7 +21,7 @@ export class Monitor extends Component {
         windowHeight: 0,
     }
 
-    rtBtn = (c, r) => {
+    currentButton = (c, r) => {
         this.setState({currentCol: c, currentRow: r})
     }
 
@@ -47,7 +47,7 @@ export class Monitor extends Component {
                </div>
                <div>
                     <section style={fieldStylePortrait}>
-                        <Field cols={this.state.cols} rows={this.state.rows} rtBtn={this.rtBtn}/>
+                        <Field cols={this.state.cols} rows={this.state.rows} currentButton={this.currentButton} currentCol={this.state.currentCol} currentRow={this.state.currentRow} />
                     </section>
                     <aside style={sideshowStylePortrait}>
                         <Sideshow col={this.state.currentCol} row={this.state.currentRow} Info={this.state}/>
@@ -61,7 +61,7 @@ export class Monitor extends Component {
         return (
             <div>
                 <section style={fieldStyleLandscape}>
-                    <Field cols={this.state.cols} rows={this.state.rows} rtBtn={this.rtBtn} btnBgColor={this.state.btnBgColor}/>
+                    <Field cols={this.state.cols} rows={this.state.rows} currentButton={this.currentButton} currentCol={this.state.currentCol} currentRow={this.state.currentRow} />
                 </section>
                 <aside style={{float: 'right', width: '70%'}}>
                     <section style={midshowStyleLandscape}>

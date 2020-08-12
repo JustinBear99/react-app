@@ -7,7 +7,7 @@ export class Field extends Component {
     render() {
         return this.props.rows.map((row) => (
             <div key={uuid()} style={{verticalAlign: 'middle'}}>
-                <Row cols={this.props.cols} row={row} rtBtn={this.props.rtBtn}/>
+                <Row cols={this.props.cols} row={row} currentButton={this.props.currentButton} currentCol={this.props.currentCol} currentRow={this.props.currentRow}/>
             </div>
         ));
     }

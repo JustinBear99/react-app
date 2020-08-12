@@ -3,10 +3,11 @@ import { Joystick } from 'react-joystick-component'
 import Frontview from '../control/Frontview'
 
 export class Control extends Component {
+     
     render() {
         return (
-            <div>
-                <Frontview />
+            <div id={'control'} style={{overflow: 'hidden'}}>
+                <Frontview/>
                 <Joystick size={100} baseColor="red" stickColor="blue" />
                 
             </div>
