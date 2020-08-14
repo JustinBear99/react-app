@@ -40,14 +40,15 @@ export class Drawpolygon extends Component {
     clickEvent = (item) => {
         const category_id = {1:'stalk', 2:'spear', 3:'shoot', 4:'bar'}
         const category = category_id[item.category_id]
-        const width = (item.bbox[2]*this.props.width)/item.segmentation.size[1]
-        const height = (item.bbox[3]*this.props.height)/item.segmentation.size[0]
+        const width = item.bbox[2]
+        const height = item.bbox[3]
         const score = item.score
+        const ratio = 2/item.ratio
         const num_stalks = this.state.num_stalks
         const num_spears = this.state.num_spears
         const num_shoots = this.state.num_shoots
         
-        this.props.detInfo(category, width, height, score, num_stalks, num_spears, num_shoots)
+        this.props.detInfo(category, width, height, score, ratio, num_stalks, num_spears, num_shoots)
     }
     
     fill = (item) => {

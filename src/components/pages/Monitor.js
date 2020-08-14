@@ -3,6 +3,8 @@ import Field from '../monitor/Field'
 import Sideshow from '../monitor/Sideshow'
 import Midshow from '../monitor/Midshow'
 
+import '../../css/Monitor.css'
+
 export class Monitor extends Component {
 
     state = {
@@ -15,23 +17,25 @@ export class Monitor extends Component {
         num_shoots: 0,
         h_obj: 0,
         w_obj: 0,
-        cate_obj: 0,
+        cate_obj: undefined,
         score: 0,
-        windowWidth: 0,
-        windowHeight: 0,
+        ratio: 0,
+        windowWidth: 10,
+        windowHeight: 10,
     }
 
     currentButton = (c, r) => {
         this.setState({currentCol: c, currentRow: r})
     }
 
-    detInfo = (category, width, height, score, num_stalks, num_spears, num_shoots) => {
+    detInfo = (category, width, height, score, ratio, num_stalks, num_spears, num_shoots) => {
         this.setState(
             {
                 cate_obj: category,
                 w_obj: width,
                 h_obj: height,
                 score: score,
+                ratio: ratio,
                 num_stalks: num_stalks,
                 num_spears: num_spears,
                 num_shoots: num_shoots,
@@ -39,106 +43,34 @@ export class Monitor extends Component {
         )
     }
 
-    portrait() {
-       return (
-           <div>
-               <div style={midshowStylePortrait}> 
-                   <Midshow col={this.state.currentCol} row={this.state.currentRow} detInfo={this.detInfo}/>
-               </div>
-               <div>
-                    <section style={fieldStylePortrait}>
-                        <Field cols={this.state.cols} rows={this.state.rows} currentButton={this.currentButton} currentCol={this.state.currentCol} currentRow={this.state.currentRow} />
-                    </section>
-                    <aside style={sideshowStylePortrait}>
-                        <Sideshow col={this.state.currentCol} row={this.state.currentRow} Info={this.state}/>
-                    </aside> 
-                </div>
-           </div>
-       )
-    }
-
-    landscape() {
-        return (
-            <div>
-                <section style={fieldStyleLandscape}>
-                    <Field cols={this.state.cols} rows={this.state.rows} currentButton={this.currentButton} currentCol={this.state.currentCol} currentRow={this.state.currentRow} />
-                </section>
-                <aside style={{float: 'right', width: '70%'}}>
-                    <section style={midshowStyleLandscape}>
-                        <Midshow col={this.state.currentCol} row={this.state.currentRow} detInfo={this.detInfo}/>
-                    </section>
-                    <aside style={sideshowStyleLandscape}>
-                        <Sideshow col={this.state.currentCol} row={this.state.currentRow} Info={this.state}/>
-                    </aside>
-                </aside>
-            </div>
-        )
-    }
-
     componentDidMount() {
-        this.updateDimensions();
+        this.updateDimensions()
         window.addEventListener("resize", this.updateDimensions.bind(this));
-      }
+    }
     
     componentWillUnmount() {
-    window.removeEventListener("resize", this.updateDimensions.bind(this));
+        window.removeEventListener("resize", this.updateDimensions.bind(this));
     }
 
     updateDimensions() {
-        this.setState({windowHeight: window.innerHeight, windowWidth: window.innerWidth})
+        this.setState({windowWidth: window.innerWidth, windowHeight: window.innerHeight})
     }
 
     render() {
-        return this.state.windowWidth < this.state.windowHeight ? this.portrait() : this.landscape()
+        return (
+            <div className="main-container">
+                <div className="field">
+                    <Field cols={this.state.cols} rows={this.state.rows} currentButton={this.currentButton} currentCol={this.state.currentCol} currentRow={this.state.currentRow} />
+                </div>
+                <div className="midshow">
+                    <Midshow col={this.state.currentCol} row={this.state.currentRow} detInfo={this.detInfo} windowWidth={this.state.windowWidth} windowHeight={this.state.windowHeight}/>
+                </div>
+                <div className="sideshow">
+                    <Sideshow col={this.state.currentCol} row={this.state.currentRow} Info={this.state} windowWidth={this.state.windowWidth} windowHeight={this.state.windowHeight}/>
+                </div>
+            </div>
+        )
     }
 }
 
-const fieldStylePortrait = {
-    //backgroundColor: 'blue',
-    float: 'left',
-    padding: '20px 20px',
-    width: '50%'
-}
-
-const fieldStyleLandscape = {
-    //backgroundColor: 'blue',
-    float: 'left',
-    padding: '20px 20px',
-    width: '30%'
-}
-
-const midshowStylePortrait = {
-    //backgroundColor: 'red',
-    color: 'black',
-    alignItems: 'center',
-    justifyContent: 'center',
-}
-
-const midshowStyleLandscape = {
-    //backgroundColor: 'red',
-    color: 'black',
-    //alignItems: 'center',
-    //justifyContent: 'center',
-    float: 'left',
-    width: '70%'
-}
-
-const sideshowStylePortrait = {
-    //backgroundColor: 'yellow',
-    padding: '20px',
-    color: 'black',
-    float: 'right',
-    width: '50%',
-    fontSize: '16px',
-    txtAlign: 'center',
-}
-
-const sideshowStyleLandscape = {
-    //backgroundColor: 'yellow',
-    padding: '20px',
-    color: 'black',
-    float: 'right',
-    width: '30%',
-    fontSize: '16px',
-}
 export default Monitor

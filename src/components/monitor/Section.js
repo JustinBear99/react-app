@@ -18,13 +18,14 @@ export class Section extends Component {
 
     buttonStyle = () => {
         return {
-            backgroundColor: (this.props.currentRow===this.props.rowId && this.props.currentCol===this.props.col.id) ? 'black' : 'green',
-            margin: '0px 2%',
-            padding: '2%',
+            backgroundColor: (this.props.currentRow===this.props.rowId && this.props.currentCol===this.props.col.id) ? '#33cc33' : 'green',
+            margin: '3px 10px',
+            padding: '0% 5%',
             height: '90px',
-            width: '10%',
             fontSize: '30px',
             cursor: 'pointer',
+            borderRadius: '3px',
+            border: '2px solid green'
         }
     }
 
@@ -34,14 +35,14 @@ export class Section extends Component {
             if (this.props.rowId === 0){
                 return (
                     <React.Fragment>
-                        <p style={{display: 'inline', fontSize: '30px', margin: '5% 4% 5% 4%'}}></p>
-                        <p style={{display: 'inline', fontSize: '30px', margin: '5% 5% 5% 10%'}}>{this.props.col.id}</p>
+                        <p style={{fontSize: '30px', margin: '5% 0%'}}></p>
+                        <p style={{fontSize: '30px', margin: '5% 4% 5% 4%'}}>{this.props.col.id}</p>
                     </React.Fragment>
                 )
             } else {
                 return (
                     <React.Fragment>
-                        <p style={{display: 'inline', fontSize: '30px', margin: '5% 5%', verticalAlign: 'middle'}}>{this.props.rowId}</p>
+                        <p style={{fontSize: '30px', margin: '5% 0%',}}>{this.props.rowId}</p>
                         <button style={this.buttonStyle()} onClick={this.onClickEvent.bind(this)}></button>
                     </React.Fragment>
                 )
@@ -50,7 +51,7 @@ export class Section extends Component {
         } else {
             if (this.props.rowId === 0) {
                 return (
-                    <p style={{display: 'inline', fontSize: '30px', margin: '5% 5%',}}>{this.props.col.id}</p>
+                    <p style={{fontSize: '30px', margin: '5% 5%',}}>{this.props.col.id}</p>
                 )
             } else {
                 return (

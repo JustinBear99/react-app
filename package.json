@@ -13,8 +13,9 @@
     "react-joystick-component": "^1.4.0",
     "react-map-gl": "^5.2.7",
     "react-polygon": "^0.2.0",
+    "react-resize-detector": "^5.0.7",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1",
+    "react-scripts": "^3.4.3",
     "react-uuid": "^1.0.2",
     "react-webcam": "^5.2.0",
     "uuid": "^8.3.0"

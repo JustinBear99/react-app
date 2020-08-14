@@ -25,7 +25,7 @@ class Asparagus extends React.Component{
         
         return(
             <div style={this.getStyle()}>
-                <h1>Monitoring system</h1>
+                <h1>Asparagus Monitoring System</h1>
                 <br></br>
                 <Link style={this.linkStyle()} to="/">Home</Link> |  
                 <Link style={this.linkStyle()} to="/control"> Control</Link>｜ 

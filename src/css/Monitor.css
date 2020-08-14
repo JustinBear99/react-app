@@ -1,0 +1,41 @@
+.main-container{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-gap: 10px;
+}
+
+.field{
+    order: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.midshow{
+    order: 2;
+}
+
+.sideshow{
+    order: 3;
+}
+
+@media (max-width: 900px){
+    .main-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+    }
+    .field{
+        order: 2;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    
+    .midshow{
+        order: 1;
+        grid-column: 1/3;
+    }
+    
+    .sideshow{
+        order: 3;
+    }
+}
