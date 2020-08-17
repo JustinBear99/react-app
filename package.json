@@ -6,7 +6,12 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "axios": "^0.19.2",
+    "bit-buffer": "^0.2.4",
+    "browser-serialport": "^2.1.0",
+    "events": "^3.2.0",
     "firebase": "^7.17.2",
+    "lodash": "^4.17.20",
     "react": "^16.13.1",
     "react-device-detect": "^1.13.1",
     "react-dom": "^16.13.1",
@@ -18,6 +23,7 @@
     "react-scripts": "^3.4.3",
     "react-uuid": "^1.0.2",
     "react-webcam": "^5.2.0",
+    "serialport": "^9.0.1",
     "uuid": "^8.3.0"
   },
   "scripts": {
@@ -40,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/serialport": "^8.0.1"
   }
 }

@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import SerialPort from 'serialport';
+import  SerialPort from 'serialport';
 import { BitView } from 'bit-buffer';
 import { EventEmitter } from 'events';
 
@@ -79,7 +79,7 @@ const HEALTH_STATUSES = new Map();
 HEALTH_STATUSES.set(0x00, 'Good');
 HEALTH_STATUSES.set(0x01, 'Warning');
 HEALTH_STATUSES.set(0x02, 'Error');
-
+/*
 const RESPONSE_TYPES = {
     SCAN: 0,
     EXPRESS_SCAN: 1,
@@ -87,7 +87,7 @@ const RESPONSE_TYPES = {
     INFO: 3,
     HEALTH: 4,
     SAMPLERATE: 5,
-};
+};*/
 
 export default class RPLidar extends EventEmitter {
     state = RPLIDAR_STATES.UNKNOWN;
@@ -346,7 +346,7 @@ function parseScan(data) {
     if(start === inverseStart) throw new Error('ParseError: !S === S');
 
     let C = byte1.substring(7, 8);
-    if(C != 1) throw new Error('ParseError: C not 1');
+    if(C !== 1) throw new Error('ParseError: C not 1');
 
     let angle = bb.getBits(9, 15, false) / 64.0; // 0-360 deg
     // I've noticed that sometimes it gives me an angle slightly over 360

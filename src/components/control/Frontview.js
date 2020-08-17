@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Webcam from 'react-webcam'
+import axios from 'axios';
 
 export class Frontview extends Component {
     state = {
@@ -12,7 +13,24 @@ export class Frontview extends Component {
 
     shutter() {
         const imagesrc = this.webcam.getScreenshot();
-        console.log(imagesrc)
+        this.uploadPhoto(imagesrc)
+    }
+
+    uploadPhoto(image) {
+        const cors = 'https://cors-anywhere.herokuapp.com/';
+        const ibp = 'http://ibp.bime.ntu.edu.tw/rest/sensorDataLogs/ntu_test/lab403/asparagus/img/file'
+
+        var data = new FormData();
+        data.append('file', image);
+        data.append('dataTime', '2020-08-14 12:12:12');
+        
+        axios.post(`${cors}${ibp}`, data, {headers: {'Content-Type': 'multipart/form-data'}})
+            .then(function (response) {
+            console.log(response);
+          })
+            .catch(function (error) {
+            console.log(error);
+          });
     }
 
     componentDidMount() {
@@ -25,7 +43,8 @@ export class Frontview extends Component {
         return (
             <div>
                 <h1>Front view</h1>
-                <Webcam height={`${this.state.width*0.25}px`}
+                <Webcam audio={false}
+                        height={`${this.state.width*0.25}px`}
                         ref={this.setRef}
                         screenshotFormat={'image/jpeg'}
                 />
