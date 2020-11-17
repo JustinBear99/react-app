@@ -9,7 +9,7 @@ export class Control extends Component {
         return (
             <div id={'control'} style={{overflow: 'hidden'}}>
                 <Frontview/>
-                <Joystick size={100} baseColor="red" stickColor="blue" />
+                <Joystick size={100} baseColor="red" stickColor="blue" /> 
             </div>
         )
     }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Collapsible from 'react-collapsible'
 //import images from './Images'
 
 export class Sideshow extends Component {
@@ -50,6 +51,15 @@ export class Sideshow extends Component {
         }
     }
 
+    collapseStyle() {
+        return {
+            fontsize: '2em',
+            backgroundColor: 'green',
+            textAlign: 'left',
+            
+        }
+    }
+
     componentDidMount() {
         const w = document.getElementById('sideshow').clientWidth
         this.setState({width: w*0.9})
@@ -77,6 +87,14 @@ export class Sideshow extends Component {
                         <li style={this.liStyle()}>Width: {(Info.w_obj*Info.ratio).toFixed(1)} (cm)</li>
                     </ul>
                 </div>
+                {/* <Collapsible trigger='Start here' triggerTagName="button" triggerClassName={this.collapseStyle()}>
+                    <h2 style={this.headerStyle()} >States of current image</h2>
+                    <ul style={this.ulStyle()}>
+                        <li style={this.liStyle()}>Number of stalks: {Info.num_stalks}</li>
+                        <li style={this.liStyle()}>Number of spears: {Info.num_spears}</li>
+                        <li style={this.liStyle()}>Number of shoots: {Info.num_shoots}</li>
+                    </ul>
+                </Collapsible> */}
             </div>
         )
     }

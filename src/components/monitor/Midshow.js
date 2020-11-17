@@ -20,8 +20,8 @@ export class Midshow extends Component {
     static getDerivedStateFromProps(props, state) {
         return (
             {
-                width: props.windowWidth > 900 ? ((props.windowWidth)*0.5)-20 : props.windowWidth,
-                height: props.windowWidth > 900 ? (((props.windowWidth)*0.5)-20)*3/4 : props.windowWidth*3/4
+                width: props.windowWidth > 900 ? ((props.windowWidth)*0.5)-10 : props.windowWidth,
+                height: props.windowWidth > 900 ? (((props.windowWidth)*0.5)-10)*3/4 : props.windowWidth*3/4
             }
         )
     }
